@@ -1,0 +1,13 @@
+[{
+		"isOptional": false,
+		"name": "nach0.recipes.fishersremastered.pipliz.merchant.lure",
+		"requires": [{
+			"amount": 25,
+			"type": "goldcoin"
+		}],
+		"results": [{
+		"amount": 1,
+			"type": "nach0.types.fishersremastered.lure"
+		}]
+	}
+]

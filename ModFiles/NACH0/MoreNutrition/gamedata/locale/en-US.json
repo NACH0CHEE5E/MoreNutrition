@@ -1,0 +1,20 @@
+{
+		"popup": {
+			"limits": {
+				"nach0.jobs.fishersremastered.betterfisher": "Better Fisher Limits",
+				"nach0.jobs.fishersremastered.composter": "Composter Limits",
+				"nach0.jobs.fishersremastered.fisher": "Fisher Limits"
+			}
+		}
+	},
+	"types": {
+		"Nach0.types.fishersremastered.fish": "Fish",
+		"Nach0.types.fishersremastered.cookedfish": "Cooked Fish",
+		"Nach0.types.fishersremastered.compost": "Compost",
+		"Nach0.types.fishersremastered.lure": "Lure",
+		"Nach0.types.fishersremastered.composter": "Composter",
+		"Nach0.types.fishersremastered.bait": "Bait",
+		"Nach0.types.fishersremastered.rod": "Rod",
+		"Nach0.types.fishersremastered.betterrod": "Better Rod"
+	}
+}

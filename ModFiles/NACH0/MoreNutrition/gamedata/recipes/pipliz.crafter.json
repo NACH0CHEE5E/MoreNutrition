@@ -1,0 +1,45 @@
+[{
+		"defaultLimit": 5,
+		"defaultPriority": 100,
+		"isOptional": true,
+		"name": "nach0.recipes.fishersremastered.pipliz.crafter.composter",
+		"requires": [{
+				"amount": 5,
+				"type": "dirt"
+			},
+			{
+				"amount": 5,
+				"type": "planks"
+			}
+		],
+		"results": [{
+			"type": "nach0.types.fishersremastered.composter"
+		}]
+	},
+	{
+		"defaultLimit": 5,
+		"defaultPriority": 100,
+		"isOptional": false,
+		"name": "nach0.recipes.fishersremastered.pipliz.crafter.rod",
+		"requires": [{
+			"amount": 5,
+			"type": "planks"
+		}],
+		"results": [{
+			"type": "nach0.types.fishersremastered.rod"
+		}]
+	},
+	{
+		"defaultLimit": 5,
+		"defaultPriority": 100,
+		"isOptional": false,
+		"name": "nach0.recipes.fishersremastered.pipliz.crafter.betterrod",
+		"requires": [{
+			"amount": 5,
+			"type": "coatedplanks"
+		}],
+		"results": [{
+			"type": "nach0.types.fishersremastered.betterrod"
+		}]
+	}
+]

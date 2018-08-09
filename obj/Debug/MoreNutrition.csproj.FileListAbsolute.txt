@@ -1,0 +1,17 @@
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\MoreNutrition.dll
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\MoreNutrition.pdb
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\APIProvider.dll
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\Assembly-CSharp.dll
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\colonyserverwrapperdll.dll
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\Open.Nat.dll
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\System.Threading.dll
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\UnityEngine.dll
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\UnityEngine.UI.dll
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\APIProvider.pdb
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\colonyserverwrapperdll.pdb
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\obj\Debug\MoreNutrition.csprojAssemblyReference.cache
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\obj\Debug\MoreNutrition.csproj.CoreCompileInputs.cache
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\obj\Debug\MoreNutrition.csproj.CopyComplete
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\obj\Debug\MoreNutrition.dll
+C:\Users\mitch\Desktop\GitHub\MoreNutrition\obj\Debug\MoreNutrition.pdb

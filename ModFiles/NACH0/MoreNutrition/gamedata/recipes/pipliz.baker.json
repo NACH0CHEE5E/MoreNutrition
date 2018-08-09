@@ -1,0 +1,17 @@
+[{
+		"isOptional": false,
+		"name": "nach0.recipes.fishersremastered.pipliz.baker.cookedfish",
+		"requires": [{
+			"amount": 5,
+			"type": "nach0.types.fishersremastered.fish"
+		},
+		{
+			"amount": 2,
+			"type": "firewood"
+		}],
+		"results": [{
+		"amount": 5,
+			"type": "nach0.types.fishersremastered.cookedfish"
+		}]
+	}
+]

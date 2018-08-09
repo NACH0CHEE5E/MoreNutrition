@@ -1,0 +1,13 @@
+[{
+		"isOptional": false,
+		"name": "nach0.recipes.fishersremastered.fisher.fish",
+		"requires": [{
+			"amount": 3,
+			"type": "bread"
+		}],
+		"results": [{
+		"amount": 15,
+			"type": "nach0.types.fishersremastered.fish"
+		}]
+	}
+]
