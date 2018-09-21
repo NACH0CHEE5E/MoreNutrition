@@ -151,5 +151,107 @@
 		"icon": "./textures/icons/bread.png",
 		"maxstacksize": 100,
 		"nutritionalValue": 5.5
+	},
+	"Nach0ChickenCoopJobBlock": {
+		"categories": [
+			"nach0",
+			"MoreNutrition",
+			"jobs"
+		],
+		"icon": "./textures/icons/Nach0ChickenCoopJobBlock.png",
+		"maxStackSize": 50,
+		"isRotatable" : true,
+		"isSolid" : true,
+		"needsBase" : true,
+		"rotatablex-": "Nach0ChickenCoopJobBlockx-",
+		"rotatablex+": "Nach0ChickenCoopJobBlockx+",
+		"rotatablez-": "Nach0ChickenCoopJobBlockz-",
+		"rotatablez+": "Nach0ChickenCoopJobBlockz+"
+	},
+	"Nach0ChickenCoopJobBlockx-" : {
+		"parentType": "Nach0ChickenCoopJobBlock",
+		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
+		"sideall": "planks"
+	},
+	"Nach0ChickenCoopJobBlockx+" : {
+		"parentType": "Nach0ChickenCoopJobBlock",
+		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
+		"sideall": "planks"
+
+	},
+	"Nach0ChickenCoopJobBlockz-" : {
+		"parentType": "Nach0ChickenCoopJobBlock",
+		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
+		"sideall": "planks"
+	},
+	"Nach0ChickenCoopJobBlockz+" : {
+		"parentType": "Nach0ChickenCoopJobBlock",
+		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
+		"sideall": "planks"
+
+	},
+	"Nach0ChickenFence": {
+		"categories": [
+			"nach0",
+			"MoreNutrition",
+			"blocks"
+		],
+		"icon": "./textures/icons/Nach0ChickenFence.png",
+		"maxStackSize": 50,
+		"isRotatable" : true,
+		"isSolid" : true,
+		"needsBase" : true,
+		"rotatablex-": "Nach0ChickenFencex",
+		"rotatablex+": "Nach0ChickenFencex",
+		"rotatablez-": "Nach0ChickenFencez",
+		"rotatablez+": "Nach0ChickenFencez"
+	},
+	"Nach0ChickenFencex" : {
+		"parentType": "Nach0ChickenFence",
+		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
+		"sideall": "redplanks"
+
+	},
+	"Nach0ChickenFencez" : {
+		"parentType": "Nach0ChickenFence",
+		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
+		"sideall": "blackplanks"
+
+	},
+	"Nach0ChickenFenceCorner": {
+		"categories": [
+			"nach0",
+			"MoreNutrition",
+			"blocks"
+		],
+		"icon": "./textures/icons/Nach0ChickenFenceCorner.png",
+		"maxStackSize": 50,
+		"isRotatable" : true,
+		"isSolid" : true,
+		"needsBase" : true,
+		"rotatablex-": "Nach0ChickenFenceCornerx-",
+		"rotatablex+": "Nach0ChickenFenceCornerx+",
+		"rotatablez-": "Nach0ChickenFenceCornerz-",
+		"rotatablez+": "Nach0ChickenFenceCornerz+"
+	},
+	"Nach0ChickenFenceCornerx-" : {
+		"parentType": "Nach0ChickenFenceCorner",
+		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
+		"sideall": "stonebricks"
+	},
+	"Nach0ChickenFenceCornerx+" : {
+		"parentType": "Nach0ChickenFenceCorner",
+		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
+		"sideall": "bricks"
+	},
+	"Nach0ChickenFenceCornerz-" : {
+		"parentType": "Nach0ChickenFenceCorner",
+		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
+		"sideall": "clay"
+	},
+	"Nach0ChickenFenceCornerz+" : {
+		"parentType": "Nach0ChickenFenceCorner",
+		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
+		"sideall": "ironblock"
 	}
 }
