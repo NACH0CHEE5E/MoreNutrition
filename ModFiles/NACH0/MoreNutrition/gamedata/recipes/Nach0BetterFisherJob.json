@@ -1,13 +1,9 @@
 [{
 		"isOptional": false,
-		"name": "nach0.recipes.fishersremastered.pipliz.baker.cookedfish",
+		"name": "nach0.recipes.fishersremastered.betterfisher.fish",
 		"requires": [{
-			"amount": 5,
-			"type": "nach0.types.fishersremastered.fish"
-		},
-		{
-			"amount": 2,
-			"type": "firewood"
+			"amount": 1,
+			"type": "nach0.types.fishersremastered.lure"
 		}],
 		"results": [{
 		"amount": 5,

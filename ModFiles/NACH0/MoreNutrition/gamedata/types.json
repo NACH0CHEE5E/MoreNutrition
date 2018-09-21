@@ -140,5 +140,16 @@
 		"mesh": "./meshes/rodz+.obj",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
 		"sideall": "coatedplanks"
+	},
+	"Nach0Bread": {
+		"categories": [
+			"nach0",
+			"MoreNutrition",
+			"food"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/bread.png",
+		"maxstacksize": 100,
+		"nutritionalValue": 5.5
 	}
 }

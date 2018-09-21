@@ -10,7 +10,6 @@ C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\UnityEngine.dll
 C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\UnityEngine.UI.dll
 C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\APIProvider.pdb
 C:\Users\mitch\Desktop\GitHub\MoreNutrition\bin\Debug\colonyserverwrapperdll.pdb
-C:\Users\mitch\Desktop\GitHub\MoreNutrition\obj\Debug\MoreNutrition.csprojAssemblyReference.cache
 C:\Users\mitch\Desktop\GitHub\MoreNutrition\obj\Debug\MoreNutrition.csproj.CoreCompileInputs.cache
 C:\Users\mitch\Desktop\GitHub\MoreNutrition\obj\Debug\MoreNutrition.csproj.CopyComplete
 C:\Users\mitch\Desktop\GitHub\MoreNutrition\obj\Debug\MoreNutrition.dll

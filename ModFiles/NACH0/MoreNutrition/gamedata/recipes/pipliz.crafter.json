@@ -18,7 +18,7 @@
 	},
 	{
 		"defaultLimit": 5,
-		"defaultPriority": 100,
+		"defaultPriority": -100,
 		"isOptional": false,
 		"name": "nach0.recipes.fishersremastered.pipliz.crafter.rod",
 		"requires": [{
@@ -31,7 +31,7 @@
 	},
 	{
 		"defaultLimit": 5,
-		"defaultPriority": 100,
+		"defaultPriority": -100,
 		"isOptional": false,
 		"name": "nach0.recipes.fishersremastered.pipliz.crafter.betterrod",
 		"requires": [{

@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="BlockJobsModEntries.cs" />
     <Compile Include="Jobs\Nach0BetterFisherJob.cs" />
+    <Compile Include="Jobs\Nach0ChickenCoopJob.cs" />
     <Compile Include="Jobs\Nach0FisherJob.cs" />
   </ItemGroup>
   <ItemGroup>

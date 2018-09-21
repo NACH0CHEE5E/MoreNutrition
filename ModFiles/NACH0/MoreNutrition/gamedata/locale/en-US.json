@@ -1,20 +1,30 @@
 {
-		"popup": {
-			"limits": {
-				"nach0.jobs.fishersremastered.betterfisher": "Better Fisher Limits",
-				"nach0.jobs.fishersremastered.composter": "Composter Limits",
-				"nach0.jobs.fishersremastered.fisher": "Fisher Limits"
+	"popup": {
+		"limits": {
+			"nach0.jobs.fishersremastered.betterfisher": "Better Fisher Limits",
+			"nach0.jobs.fishersremastered.composter": "Composter Limits",
+			"nach0.jobs.fishersremastered.fisher": "Fisher Limits"
+		}
+	},
+	"sentences": {
+		"pipliz": {
+			"baseresearch": {
+				"wheatfarming" : {
+					"description" : "A more complex method of food production, for advanced colonies only. Unlocks wheat farmers, the grindstone and the oven. Grants 400 wheat seeds.",
+					"name" : "Damper Production"
+				}
 			}
 		}
 	},
 	"types": {
-		"Nach0.types.fishersremastered.fish": "Fish",
-		"Nach0.types.fishersremastered.cookedfish": "Cooked Fish",
-		"Nach0.types.fishersremastered.compost": "Compost",
-		"Nach0.types.fishersremastered.lure": "Lure",
-		"Nach0.types.fishersremastered.composter": "Composter",
-		"Nach0.types.fishersremastered.bait": "Bait",
-		"Nach0.types.fishersremastered.rod": "Rod",
-		"Nach0.types.fishersremastered.betterrod": "Better Rod"
+		"nach0.types.fishersremastered.fish": "Fish",
+		"nach0.types.fishersremastered.cookedfish": "Cooked Fish",
+		"nach0.types.fishersremastered.compost": "Compost",
+		"nach0.types.fishersremastered.lure": "Lure",
+		"nach0.types.fishersremastered.composter": "Composter",
+		"nach0.types.fishersremastered.bait": "Bait",
+		"nach0.types.fishersremastered.rod": "Rod",
+		"nach0.types.fishersremastered.betterrod": "Better Rod",
+		"bread": "Damper"
 	}
 }

@@ -1,0 +1,19 @@
+{
+	"_settings" : {
+		"defaultAlbedo" : "./albedo/Nach0Missing.png",
+		"defaultEmissive" : "./emissiveMaskAlpha/default.png",
+		"defaultHeight" : "./heightSmoothnessSpecularity/default.png",
+		"defaultNormal" : "./normal/default.png",
+		"fileExtension" : ".png",
+		"folderAlbedo" : "./albedo/",
+		"folderEmissive" : "./emissiveMaskAlpha/",
+		"folderHeight" : "./heightSmoothnessSpecularity/",
+		"folderNormal" : "./normal/"
+	},
+	"nach0.textures.fishersremastered.composter.sides": {
+		"albedo": "compostersides"
+	},
+	"nach0.textures.fishersremastered.composter.top": {
+		"albedo": "compostertop"
+	}
+}
