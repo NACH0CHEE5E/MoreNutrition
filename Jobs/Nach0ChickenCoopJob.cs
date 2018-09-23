@@ -72,7 +72,7 @@ namespace Jobs
         private static ushort ConsumedItem = ItemTypes.IndexLookup.GetIndex("Nach0ChickenFeed");
         private static ushort ProducedItem = ItemTypes.IndexLookup.GetIndex("Nach0Egg");
         private static ushort ByproductItem = ItemTypes.IndexLookup.GetIndex("Nach0ChickenCorpse");
-		private static float ByproductChance = 0.10f;
+		private static float ByproductChance = 0.20f;
 
         // create new instance (when job block is placed)
         public ITrackableBlock InitializeOnAdd(Vector3Int pos, ushort blockType, Players.Player owner)
@@ -96,7 +96,7 @@ namespace Jobs
                 printName = "Chicken coop",
                 maskColor1 = new UnityEngine.Color32(84, 2, 2, 1),
                 type = NPCTypeID.GetNextID(),
-				inventoryCapacity = 0.4f
+				inventoryCapacity = 0.1f
             };
         }
 
@@ -122,7 +122,7 @@ namespace Jobs
                 return;
             }
             state.Inventory.Add(ProducedItem);
-			if (Pipliz.Random.NextFloat(0.0f, 1.0f) > ByproductChance) {
+			if (Pipliz.Random.NextFloat(0.0f, 1.0f) > (1.0f - ByproductChance)) {
 				state.Inventory.Add(ByproductItem);
 			}
             state.SetIndicator(new Shared.IndicatorState(CraftingCooldown, ProducedItem), true);
