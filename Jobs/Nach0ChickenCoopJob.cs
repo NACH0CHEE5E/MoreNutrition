@@ -67,8 +67,11 @@ namespace Jobs
 
         public bool coopTestDone = false;
 
-        private ushort ConsumedItem = BuiltinBlocks.WheatStage1;
-        private ushort ProducedItem = BuiltinBlocks.RedPlanks;
+        //private ushort ConsumedItem = BuiltinBlocks.WheatStage1;
+        //private ushort ProducedItem = BuiltinBlocks.RedPlanks;
+        private ushort ConsumedItem = ItemTypes.IndexLookup.GetIndex("Nach0ChickenFeed");
+        private ushort ProducedItem1 = ItemTypes.IndexLookup.GetIndex("Nach0Egg");
+        private ushort ProducedItem2 = ItemTypes.IndexLookup.GetIndex("Nach0ChickenCorpse");
 
         // create new instance (when job block is placed)
         public ITrackableBlock InitializeOnAdd(Vector3Int pos, ushort blockType, Players.Player owner)
@@ -116,8 +119,8 @@ namespace Jobs
                 state.SetIndicator(new Shared.IndicatorState(MissingItemCooldown, ConsumedItem, true, false), true);
                 return;
             }
-            stockpile.Add(ProducedItem);
-            state.SetIndicator(new Shared.IndicatorState(CraftingCooldown, ProducedItem), true);
+            stockpile.Add(ProducedItem1);
+            state.SetIndicator(new Shared.IndicatorState(CraftingCooldown, ProducedItem2), true);
 
             return;
         }
