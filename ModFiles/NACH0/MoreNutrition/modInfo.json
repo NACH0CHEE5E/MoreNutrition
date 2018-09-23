@@ -9,13 +9,17 @@
 		"0.6.3"
 	],
 	"jsonFiles": [
-	{
+		{
 			"fileType": "addOrOverrideTextureMappingEntries",
 			"relativePath": "gamedata/textures/materials/textures.json"
 		},
 		{
 			"fileType": "addNewTypes",
 			"relativePath": "gamedata/types.json"
+		},
+		{
+			"fileType" : "overrideTypeProperties",
+			"relativePath" : "gamedata/typeoverride.json"
 		},
 		{
 			"fileType": "addOrOverrideLocalization",
@@ -33,7 +37,7 @@
 				"npcType" : "Nach0FisherJob",
 				"relativePath" : "gamedata/recipes/Nach0FisherJob.json"
 		},
-{
+		{
 				"fileType" : "addOrReplaceNPCRecipes",
 				"index" : -1000000,
 				"limitsUIMapping" : [

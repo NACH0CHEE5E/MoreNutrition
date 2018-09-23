@@ -1,24 +1,22 @@
-﻿using BlockTypes.Builtin;
+﻿using System.Collections.Generic;
+using BlockTypes.Builtin;
 using Pipliz.Mods.APIProvider.Jobs;
 using Server.NPCs;
-using Pipliz;
 using NPC;
+using Pipliz;
+using Pipliz.JSON;
 
 
 namespace Jobs
 {
-    public class Nach0ChickenCoopJob : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
+    public class Nach0ChickenCoopJob : BlockJobBase, IBlockJobBase, INPCTypeDefiner
     {
-        public static float StaticCraftingCooldown = 5f;
 
         public override string NPCTypeKey { get { return "Nach0ChickenCoopJob"; } }
 
-        public override float CraftingCooldown
-        {
-            get { return StaticCraftingCooldown; }
-            set { StaticCraftingCooldown = value; }
-        }
-
+        private static float CraftingCooldown = 15f;
+        private static float BlockPlacementCooldown = 1f;
+        private static float MissingItemCooldown = 2f;
         private static ushort typeStraw = ItemTypes.IndexLookup.GetIndex("straw");
         private static ushort typeFenceX = ItemTypes.IndexLookup.GetIndex("Nach0ChickenFencex");
         private static ushort typeFenceZ = ItemTypes.IndexLookup.GetIndex("Nach0ChickenFencez");
@@ -38,52 +36,53 @@ namespace Jobs
         public const int HalfRow = (NumberOfRows - 1) / 2;
 
         public static ushort[,] coopAreaXP = new ushort[,] {
-            { typeCornerZN, typeFenceX, 0, typeFenceX, typeCornerXP },
+            { typeCornerXP, typeFenceX, 0, typeFenceX, typeCornerZN },
             { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
             { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
             { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
-            { typeCornerXN, typeFenceZ, typeFenceZ, typeFenceZ, typeCornerZP }
+            { typeCornerZP, typeFenceX, typeFenceX, typeFenceX, typeCornerXN }
         };
         public static ushort[,] coopAreaXN = new ushort[,] {
-            { typeCornerXP, typeFenceZ, 0, typeFenceZ, typeCornerZN },
-            { typeFenceX, typeStraw, typeStraw, typeStraw, typeFenceX },
-            { typeFenceX, typeStraw, typeStraw, typeStraw, typeFenceX },
-            { typeFenceX, typeStraw, typeStraw, typeStraw, typeFenceX },
-            { typeCornerXN, typeFenceZ, typeFenceZ, typeFenceZ, typeCornerZP }
+            { typeCornerZP, typeFenceX, 0, typeFenceX, typeCornerXN },
+            { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
+            { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
+            { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
+            { typeCornerXP, typeFenceX, typeFenceX, typeFenceX, typeCornerZN }
         };
         public static ushort[,] coopAreaZP = new ushort[,] {
-            { typeCornerXP, typeFenceX, 0, typeFenceX, typeCornerZN },
-            { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
-            { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
-            { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
-            { typeCornerXN, typeFenceX, typeFenceX, typeFenceX, typeCornerZP }
+            { typeCornerXP, typeFenceZ, 0, typeFenceZ, typeCornerZP },
+            { typeFenceX, typeStraw, typeStraw, typeStraw, typeFenceX },
+            { typeFenceX, typeStraw, typeStraw, typeStraw, typeFenceX },
+            { typeFenceX, typeStraw, typeStraw, typeStraw, typeFenceX },
+            { typeCornerZN, typeFenceZ, typeFenceZ, typeFenceZ, typeCornerXN }
         };
         public static ushort[,] coopAreaZN = new ushort[,] {
-            { typeCornerXP, typeFenceX, 0, typeFenceX, typeCornerZN },
-            { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
-            { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
-            { typeFenceZ, typeStraw, typeStraw, typeStraw, typeFenceZ },
-            { typeCornerXN, typeFenceX, typeFenceX, typeFenceX, typeCornerZP }
+            { typeCornerZN, typeFenceZ, 0, typeFenceZ, typeCornerXN },
+            { typeFenceX, typeStraw, typeStraw, typeStraw, typeFenceX },
+            { typeFenceX, typeStraw, typeStraw, typeStraw, typeFenceX },
+            { typeFenceX, typeStraw, typeStraw, typeStraw, typeFenceX },
+            { typeCornerXP, typeFenceZ, typeFenceZ, typeFenceZ, typeCornerZP }
         };
         public static ushort[,] coopArea;
 
         public bool coopTestDone = false;
 
-        public override int MaxRecipeCraftsPerHaul { get { return 4; } }
+        private ushort ConsumedItem = BuiltinBlocks.WheatStage1;
+        private ushort ProducedItem = BuiltinBlocks.RedPlanks;
 
         // create new instance (when job block is placed)
-        public override ITrackableBlock InitializeOnAdd(Vector3Int pos, ushort blockType, Players.Player owner)
+        public ITrackableBlock InitializeOnAdd(Vector3Int pos, ushort blockType, Players.Player owner)
         {
-            string chickenCoopDirection = ItemTypes.IndexLookup.GetName(blockType);
-            CoopDirection = chickenCoopDirection.Substring(chickenCoopDirection.Length - 2); // Will save x+, x-, z+, z-
-
-            this.InitializeJob(owner, pos, 0);
+            base.InitializeJob(owner, pos, 0);
             return this;
         }
 
-        // to be implemented to allow savegame load + save
-        // public JSONNode GetJSON()
-        // public ITrackableBlock InitializeFromJSON(Players.Player owner, JSONNode node)
+        // load from savegame
+        public override ITrackableBlock InitializeFromJSON(Players.Player owner, JSONNode node)
+        {
+            base.InitializeJob(owner, (Vector3Int)node["position"], node.GetAs<int>("npcID"));
+            return this;
+        }
 
         NPCTypeStandardSettings INPCTypeDefiner.GetNPCTypeDefinition()
         {
@@ -98,16 +97,28 @@ namespace Jobs
 
         public override void OnNPCAtJob(ref NPCBase.NPCState state)
         {
-            if (!coopTestDone)
+            if (!this.coopTestDone)
             {
-                if (checkChickenCoop(ref state) == false)
+                string chickenCoopDirection = ItemTypes.IndexLookup.GetName(base.worldType);
+                this.CoopDirection = chickenCoopDirection.Substring(chickenCoopDirection.Length - 2);
+
+                if (this.checkChickenCoop(ref state) == false)
                 {
                     return;
                 }
             }
 
-            base.OnNPCAtJob(ref state); // Normal work
-            state.SetCooldown(this.CraftingCooldown);
+            // regular work, consume straw and produce eggs
+            Stockpile stockpile;
+            Stockpile.TryGetStockpile(this.Owner, out stockpile);
+            if (!stockpile.TryRemove(ConsumedItem))
+            {
+                state.SetIndicator(new Shared.IndicatorState(MissingItemCooldown, ConsumedItem, true, false), true);
+                return;
+            }
+            stockpile.Add(ProducedItem);
+            state.SetIndicator(new Shared.IndicatorState(CraftingCooldown, ProducedItem), true);
+
             return;
         }
 
@@ -152,36 +163,54 @@ namespace Jobs
             {
                 for (int j = 0; j < NumberOfCols; j++)
                 {
-
                     ushort expectedType = coopArea[i, j];
-                    // no check needed for the job block itself
-                    if (expectedType == 0)
-                    {
-                        continue;
-                    }
 
-                    // all outer blocks are on the same height (jobblock / fence).
-                    // all inner blocks (straw) one lower
-                    Vector3Int checkPos = pos;
-                    if (i > 0 && i < (NumberOfRows - 1) && j > 0 && j < (NumberOfCols - 1))
+                    if (expectedType != 0)
                     {
-                        checkPos = checkPos.Add(0, -1, 0);
-                    }
+                        // all outer blocks are on the same height (jobblock / fence).
+                        // all inner blocks (straw) one lower
+                        Vector3Int checkPos = pos;
+                        if (i > 0 && i < (NumberOfRows - 1) && j > 0 && j < (NumberOfCols - 1))
+                        {
+                            checkPos = checkPos.Add(0, -1, 0);
+                        }
 
-                    ushort foundType;
-                    if (!World.TryGetTypeAt(checkPos, out foundType) || foundType != expectedType)
-                    {
-                        //state.SetIndicator(new Shared.IndicatorState(this.CraftingCooldown, expectedType, true, false), true);
-                        ServerManager.TryChangeBlock(checkPos, expectedType);
-                        return false;
+                        ushort foundType;
+                        if (!World.TryGetTypeAt(checkPos, out foundType) || foundType != expectedType)
+                        {
+                            ItemTypes.ItemType newType = ItemTypes.GetType(expectedType);
+                            ItemTypes.ItemType inventoryType = newType;
+                            if (inventoryType.ParentItemType != null)
+                            {
+                                inventoryType = inventoryType.ParentItemType;
+                            }
+                            // try to consume the item from the stockpile
+                            Stockpile stockpile;
+                            if (!Stockpile.TryGetStockpile(this.Owner, out stockpile))
+                            {
+                                return false;
+                            }
+                            if (!stockpile.TryRemove(inventoryType.ItemIndex))
+                            {
+                                state.SetIndicator(new Shared.IndicatorState(MissingItemCooldown, inventoryType.ItemIndex, true, false), true);
+                                // state.SetCooldown(MissingItemCooldown);
+                                return false;
+                            }
+
+                            // change the block in the world
+                            ServerManager.TryChangeBlock(checkPos, expectedType);
+                            state.SetIndicator(new Shared.IndicatorState(BlockPlacementCooldown, expectedType), true);
+                            // state.SetCooldown(BlockPlacementCooldown);
+                            return false;
+                        }
                     }
                     pos = pos.Add(colStepX, 0, colStepZ);
                 }
-                pos = pos.Add(colStepX * NumberOfCols, 0, colStepZ * NumberOfCols); // reset col position
+                pos = pos.Add(colStepX * -NumberOfCols, 0, colStepZ * -NumberOfCols); // reset col position
                 pos = pos.Add(rowStepX, 0, rowStepZ);   // next row
             }
 
-            coopTestDone = true;
+            this.coopTestDone = true;
             return true;
         }
 

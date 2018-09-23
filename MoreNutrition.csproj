@@ -37,6 +37,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Colony Survival\gamedata\mods\Pipliz\colonyserverwrapper\colonyserverwrapperdll\bin\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="BaseGame">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Colony Survival\gamedata\mods\Pipliz\BaseGame\src\bin\Debug\BaseGame.dll</HintPath>
+    </Reference>
     <Reference Include="colonyserverwrapperdll">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Colony Survival\gamedata\mods\Pipliz\colonyserverwrapper\colonyserverwrapperdll\bin\colonyserverwrapperdll.dll</HintPath>
     </Reference>

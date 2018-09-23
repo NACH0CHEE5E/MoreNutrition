@@ -1,0 +1,30 @@
+{
+	"leavestaiga" : {
+		"categories" : [
+			"decorative",
+			"leaves"
+		],
+		"icon" : "./textures/icons/leavestaiga.png",
+		"onRemove" : [
+			{"amount":1,"chance":0.6,"type":"leavestaiga"},
+			{"amount":1,"chance":0.1,"type":"sappling"},
+			{"amount":1,"chance":0.15,"type":"Nach0Apple"}
+		],
+		"parentType" : "leaves",
+		"sideall" : "SELF"
+	},
+	"leavestemperate" : {
+		"categories" : [
+			"decorative",
+			"leaves"
+		],
+		"icon" : "./textures/icons/leavestemperate.png",
+		"onRemove" : [
+			{"amount":1,"chance":0.6,"type":"leavestemperate"},
+			{"amount":1,"chance":0.1,"type":"sappling"},
+			{"amount":1,"chance":0.15,"type":"Nach0Apple"}
+		],
+		"parentType" : "leaves",
+		"sideall" : "SELF"
+	}
+}
