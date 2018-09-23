@@ -219,13 +219,15 @@
 	"Nach0ChickenFencex" : {
 		"parentType": "Nach0ChickenFence",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
-		"sideall": "redplanks"
+		"sideall": "blackplanks",
+		"mesh": "./meshes/fencex.obj"
 
 	},
 	"Nach0ChickenFencez" : {
 		"parentType": "Nach0ChickenFence",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
-		"sideall": "blackplanks"
+		"sideall": "blackplanks",
+		"mesh": "./meshes/fencez.obj"
 
 	},
 	"Nach0ChickenFenceCorner": {
@@ -247,22 +249,25 @@
 	"Nach0ChickenFenceCornerx-" : {
 		"parentType": "Nach0ChickenFenceCorner",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
-		"sideall": "stonebricks"
-	},
+		"sideall": "blackplanks",
+		"mesh": "./meshes/fencecornerx-.obj"	},
 	"Nach0ChickenFenceCornerx+" : {
 		"parentType": "Nach0ChickenFenceCorner",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
-		"sideall": "bricks"
+		"sideall": "blackplanks",
+		"mesh": "./meshes/fencecornerx+.obj"
 	},
 	"Nach0ChickenFenceCornerz-" : {
 		"parentType": "Nach0ChickenFenceCorner",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
-		"sideall": "clay"
+		"sideall": "blackplanks",
+		"mesh": "./meshes/fencecornerz-.obj"
 	},
 	"Nach0ChickenFenceCornerz+" : {
 		"parentType": "Nach0ChickenFenceCorner",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
-		"sideall": "ironblock"
+		"sideall": "blackplanks",
+		"mesh": "./meshes/fencecornerz+.obj"
 	},
 	"Nach0ChickenFeed": {
 		"categories": [
