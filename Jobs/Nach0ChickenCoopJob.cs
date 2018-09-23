@@ -14,9 +14,10 @@ namespace Jobs
 
         public override string NPCTypeKey { get { return "Nach0ChickenCoopJob"; } }
 
-        private static float CraftingCooldown = 25f;
+        private static float CraftingCooldown = 15f;
         private static float BlockPlacementCooldown = 1f;
         private static float MissingItemCooldown = 2f;
+
         private static ushort typeStraw = ItemTypes.IndexLookup.GetIndex("straw");
         private static ushort typeFenceX = ItemTypes.IndexLookup.GetIndex("Nach0ChickenFencex");
         private static ushort typeFenceZ = ItemTypes.IndexLookup.GetIndex("Nach0ChickenFencez");
@@ -66,6 +67,10 @@ namespace Jobs
         public static ushort[,] coopArea;
 
         public bool coopTestDone = false;
+        private const int coopTestIterations = 2; // how often to check the coop setup
+        private static NPCTypeStandardSettings cachedNpcSettings;
+        private List<Vector3Int> insidePositions = new List<Vector3Int>();
+        private int jobIterations = 0;
 
         // currenty one item consumed, one item produced and one byproduct with a chance.
         // If more products are needed those should be defined as List<ushort> item...
@@ -73,7 +78,6 @@ namespace Jobs
         private static ushort ProducedItem = ItemTypes.IndexLookup.GetIndex("Nach0Egg");
         private static ushort ByproductItem = ItemTypes.IndexLookup.GetIndex("Nach0ChickenCorpse");
         private static float ByproductChance = 0.20f;
-
 
         // create new instance (when job block is placed)
         public ITrackableBlock InitializeOnAdd(Vector3Int pos, ushort blockType, Players.Player owner)
@@ -91,14 +95,18 @@ namespace Jobs
 
         NPCTypeStandardSettings INPCTypeDefiner.GetNPCTypeDefinition()
         {
-            return new NPCTypeStandardSettings()
+            if (cachedNpcSettings == null)
             {
-                keyName = NPCTypeKey,
-                printName = "Chicken coop",
-                maskColor1 = new UnityEngine.Color32(84, 2, 2, 1),
-                type = NPCTypeID.GetNextID(),
-                inventoryCapacity = 0.1f
-            };
+                cachedNpcSettings = new NPCTypeStandardSettings()
+                {
+                    keyName = NPCTypeKey,
+                    printName = "Chicken coop",
+                    maskColor1 = new UnityEngine.Color32(84, 2, 2, 1),
+                    type = NPCTypeID.GetNextID(),
+                    inventoryCapacity = 0.1f
+                };
+            }
+            return cachedNpcSettings;
         }
 
         public override void OnNPCAtJob(ref NPCBase.NPCState state)
@@ -113,6 +121,11 @@ namespace Jobs
                     return;
                 }
             }
+            this.jobIterations++;
+            if (this.jobIterations % coopTestIterations == 0)
+            {
+                this.coopTestDone = false;
+            }
 
             // regular work, consume straw and produce eggs
             Stockpile stockpile;
@@ -122,17 +135,13 @@ namespace Jobs
                 state.SetIndicator(new Shared.IndicatorState(MissingItemCooldown, ConsumedItem, true, false), true);
                 return;
             }
-
             state.Inventory.Add(ProducedItem);
             if (Pipliz.Random.NextFloat(0.0f, 1.0f) > (1.0f - ByproductChance))
             {
                 state.Inventory.Add(ByproductItem);
             }
-	          if (Pipliz.Random.NextFloat(0.0f, 1.0f) > (1.0f - ByproductChance)) {
-				        state.Inventory.Add(ByproductItem);
-			      }
-            state.SetIndicator(new Shared.IndicatorState(CraftingCooldown, ProducedItem), true);
-
+            state.SetIndicator(new Shared.IndicatorState(CraftingCooldown, ByproductItem), true);
+            state.JobIsDone = true;
             return;
         }
 
@@ -186,6 +195,8 @@ namespace Jobs
                         Vector3Int checkPos = pos;
                         if (i > 0 && i < (NumberOfRows - 1) && j > 0 && j < (NumberOfCols - 1))
                         {
+                            // store all inner positions in a list to later make the NPC move around
+                            this.insidePositions.Add(checkPos);
                             checkPos = checkPos.Add(0, -1, 0);
                         }
 
@@ -207,14 +218,12 @@ namespace Jobs
                             if (!stockpile.TryRemove(inventoryType.ItemIndex))
                             {
                                 state.SetIndicator(new Shared.IndicatorState(MissingItemCooldown, inventoryType.ItemIndex, true, false), true);
-                                // state.SetCooldown(MissingItemCooldown);
                                 return false;
                             }
 
                             // change the block in the world
-                            // ServerManager.TryChangeBlock(checkPos, expectedType);
+                            ServerManager.TryChangeBlock(checkPos, expectedType);
                             state.SetIndicator(new Shared.IndicatorState(BlockPlacementCooldown, expectedType), true);
-                            // state.SetCooldown(BlockPlacementCooldown);
                             return false;
                         }
                     }
@@ -226,6 +235,17 @@ namespace Jobs
 
             this.coopTestDone = true;
             return true;
+        }
+
+        public override Vector3Int GetJobLocation()
+        {
+            if (this.insidePositions.Count == 0)
+            {
+                return this.KeyLocation;
+            }
+
+            int i = Pipliz.Random.Next(0, this.insidePositions.Count - 1);
+            return this.insidePositions[i];
         }
 
     }

@@ -182,23 +182,27 @@
 	"Nach0ChickenCoopJobBlockx-" : {
 		"parentType": "Nach0ChickenCoopJobBlock",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
-		"sideall": "planks"
+		"sideall": "planks",
+		"mesh": "./meshes/fencex.obj"
 	},
 	"Nach0ChickenCoopJobBlockx+" : {
 		"parentType": "Nach0ChickenCoopJobBlock",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
-		"sideall": "planks"
+		"sideall": "planks",
+		"mesh": "./meshes/fencex.obj"
 
 	},
 	"Nach0ChickenCoopJobBlockz-" : {
 		"parentType": "Nach0ChickenCoopJobBlock",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
-		"sideall": "planks"
+		"sideall": "planks",
+		"mesh": "./meshes/fencez.obj"
 	},
 	"Nach0ChickenCoopJobBlockz+" : {
 		"parentType": "Nach0ChickenCoopJobBlock",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
-		"sideall": "planks"
+		"sideall": "planks",
+		"mesh": "./meshes/fencez.obj"
 	},
 	"Nach0ChickenFence": {
 		"categories": [
@@ -221,14 +225,12 @@
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
 		"sideall": "blackplanks",
 		"mesh": "./meshes/fencex.obj"
-
 	},
 	"Nach0ChickenFencez" : {
 		"parentType": "Nach0ChickenFence",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
 		"sideall": "blackplanks",
 		"mesh": "./meshes/fencez.obj"
-
 	},
 	"Nach0ChickenFenceCorner": {
 		"categories": [
