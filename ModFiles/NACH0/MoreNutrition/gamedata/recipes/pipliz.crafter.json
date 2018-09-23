@@ -19,7 +19,7 @@
 	{
 		"defaultLimit": 5,
 		"defaultPriority": -100,
-		"isOptional": false,
+		"isOptional": true,
 		"name": "nach0.recipes.fishersremastered.pipliz.crafter.rod",
 		"requires": [{
 			"amount": 5,
@@ -32,14 +32,81 @@
 	{
 		"defaultLimit": 5,
 		"defaultPriority": -100,
-		"isOptional": false,
+		"isOptional": true,
 		"name": "nach0.recipes.fishersremastered.pipliz.crafter.betterrod",
 		"requires": [{
 			"amount": 5,
 			"type": "coatedplanks"
-		}],
+		},{"amount": 1,
+		"type": "nach0.types.fishersremastered.rod"}],
 		"results": [{
 			"type": "nach0.types.fishersremastered.betterrod"
+		}]
+	},
+	{
+		"defaultLimit": 5,
+		"defaultPriority": 0,
+		"isOptional": true,
+		"name": "Nach0ChickenCoopJobBlock-pipliz.crafter",
+		"requires": [{
+			"amount": 15,
+			"type": "Nach0ChickenFence"
+		},{"amount": 50,
+		"type": "straw"}],
+		"results": [{
+			"type": "Nach0ChickenCoopJobBlock"
+		}]
+	},
+	{
+		"defaultLimit": 50,
+		"defaultPriority": 0,
+		"isOptional": true,
+		"name": "Nach0ChickenFence-pipliz.crafter",
+		"requires": [{
+			"amount": 15,
+			"type": "blackplanks"
+		}],
+		"results": [{"amount": 2,
+			"type": "Nach0ChickenFence"
+		}]
+	},
+	{
+		"defaultLimit": 10,
+		"defaultPriority": 0,
+		"isOptional": true,
+		"name": "Nach0ChickenFenceCorner-pipliz.crafter",
+		"requires": [{
+			"amount": 2,
+			"type": "Nach0ChickenFence"
+		}],
+		"results": [{"amount": 1,
+			"type": "Nach0ChickenFenceCorner"
+		}]
+	},
+	{
+		"defaultLimit": 10,
+		"defaultPriority": 0,
+		"isOptional": true,
+		"name": "Nach0ChickenFeed-pipliz.crafter",
+		"requires": [{
+			"amount": 15,
+			"type": "wheatstage1"
+		},{"amount": 2,"type": "wheat"}],
+		"results": [{"amount": 5,
+			"type": "Nach0ChickenFeed"
+		}]
+	},
+	{
+		"defaultLimit": 10,
+		"defaultPriority": 0,
+		"isOptional": true,
+		"name": "Nach0ButcherBlock-pipliz.crafter",
+		"requires": [{
+			"amount": 25,
+			"type": "planks"
+		},{"amount": 4,"type": "ironsword"}],
+		"results": [{"amount": 1,
+			"type": "Nach0ButcherBlock"
 		}]
 	}
 ]

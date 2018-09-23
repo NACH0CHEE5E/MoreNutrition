@@ -14,7 +14,7 @@ namespace Jobs
 
         public override string NPCTypeKey { get { return "Nach0ChickenCoopJob"; } }
 
-        private static float CraftingCooldown = 15f;
+        private static float CraftingCooldown = 25f;
         private static float BlockPlacementCooldown = 1f;
         private static float MissingItemCooldown = 2f;
         private static ushort typeStraw = ItemTypes.IndexLookup.GetIndex("straw");
@@ -72,7 +72,8 @@ namespace Jobs
         private static ushort ConsumedItem = ItemTypes.IndexLookup.GetIndex("Nach0ChickenFeed");
         private static ushort ProducedItem = ItemTypes.IndexLookup.GetIndex("Nach0Egg");
         private static ushort ByproductItem = ItemTypes.IndexLookup.GetIndex("Nach0ChickenCorpse");
-		private static float ByproductChance = 0.20f;
+		    private static float ByproductChance = 0.20f;
+
 
         // create new instance (when job block is placed)
         public ITrackableBlock InitializeOnAdd(Vector3Int pos, ushort blockType, Players.Player owner)
@@ -121,10 +122,11 @@ namespace Jobs
                 state.SetIndicator(new Shared.IndicatorState(MissingItemCooldown, ConsumedItem, true, false), true);
                 return;
             }
+
             state.Inventory.Add(ProducedItem);
-			if (Pipliz.Random.NextFloat(0.0f, 1.0f) > (1.0f - ByproductChance)) {
-				state.Inventory.Add(ByproductItem);
-			}
+	          if (Pipliz.Random.NextFloat(0.0f, 1.0f) > (1.0f - ByproductChance)) {
+				        state.Inventory.Add(ByproductItem);
+			      }
             state.SetIndicator(new Shared.IndicatorState(CraftingCooldown, ProducedItem), true);
 
             return;
@@ -206,7 +208,7 @@ namespace Jobs
                             }
 
                             // change the block in the world
-                            ServerManager.TryChangeBlock(checkPos, expectedType);
+                            // ServerManager.TryChangeBlock(checkPos, expectedType);
                             state.SetIndicator(new Shared.IndicatorState(BlockPlacementCooldown, expectedType), true);
                             // state.SetCooldown(BlockPlacementCooldown);
                             return false;

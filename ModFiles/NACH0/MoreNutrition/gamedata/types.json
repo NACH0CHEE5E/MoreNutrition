@@ -199,7 +199,6 @@
 		"parentType": "Nach0ChickenCoopJobBlock",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
 		"sideall": "planks"
-
 	},
 	"Nach0ChickenFence": {
 		"categories": [
@@ -291,5 +290,93 @@
 		"isPlaceable": false,
 		"icon": "./textures/icons/chicken.png",
 		"maxstacksize": 100
+	},
+	"Nach0ButcherBlock": {
+		"categories": [
+			"nach0",
+			"MoreNutrition",
+			"jobs"
+		],
+		"icon": "./textures/icons/butcher.png",
+		"maxStackSize": 50,
+		"sideall": "planks",
+		"sidey+": "Nach0ButcherBlockTopTexture"
+	}
+	"Nach0ChickenMeat": {
+		"categories": [
+			"nach0",
+			"MoreNutrition"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/chickenmeat.png",
+		"maxstacksize": 100
+	},
+	"Nach0CookedChickenMeat": {
+		"categories": [
+			"nach0",
+			"MoreNutrition"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/cookedchickenmeat.png",
+		"maxstacksize": 100,
+		"nutritionalValue": 5
+	},
+	"Nach0ApplePie": {
+		"categories": [
+			"nach0",
+			"MoreNutrition"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/applepie.png",
+		"maxstacksize": 100,
+		"nutritionalValue": 6
+	},
+	"Nach0Feather": {
+		"categories": [
+			"nach0",
+			"MoreNutrition"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/feather.png",
+		"maxstacksize": 100
+	},
+	"Nach0ChickenPie": {
+		"categories": [
+			"nach0",
+			"MoreNutrition"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/chickenpie.png",
+		"maxstacksize": 100,
+		"nutritionalValue": 8.5
+	},
+	"Nach0Bowl": {
+		"categories": [
+			"nach0",
+			"MoreNutrition"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/Bowl.png",
+		"maxstacksize": 100
+	},
+	"Nach0ChickenSoup": {
+		"categories": [
+			"nach0",
+			"MoreNutrition"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/chickensoup.png",
+		"maxstacksize": 100,
+		"nutritionalValue": 7.5
+	},
+	"Nach0BerryPie": {
+		"categories": [
+			"nach0",
+			"MoreNutrition"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/berrypie.png",
+		"maxstacksize": 100,
+		"nutritionalValue": 5.5
 	}
 }

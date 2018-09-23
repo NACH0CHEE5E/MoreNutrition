@@ -23,7 +23,7 @@ namespace jobentrys
             BlockJobManagerTracker.Register<Jobs.Nach0FisherJob>("nach0.types.fishersremastered.rod");
             BlockJobManagerTracker.Register<Jobs.Nach0BetterFisherJob>("nach0.types.fishersremastered.betterrod");
             BlockJobManagerTracker.Register<Jobs.Nach0ChickenCoopJob>("Nach0ChickenCoopJobBlock");
-
+            BlockJobManagerTracker.Register<Jobs.Nach0ButcherJob>("Nach0ButcherBlock");
         }
     }
 }
