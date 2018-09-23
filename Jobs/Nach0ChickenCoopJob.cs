@@ -72,6 +72,7 @@ namespace Jobs
         private ushort ConsumedItem = ItemTypes.IndexLookup.GetIndex("Nach0ChickenFeed");
         private ushort ProducedItem1 = ItemTypes.IndexLookup.GetIndex("Nach0Egg");
         private ushort ProducedItem2 = ItemTypes.IndexLookup.GetIndex("Nach0ChickenCorpse");
+        public int ChickenChance = 1;
 
         // create new instance (when job block is placed)
         public ITrackableBlock InitializeOnAdd(Vector3Int pos, ushort blockType, Players.Player owner)
@@ -120,6 +121,11 @@ namespace Jobs
                 return;
             }
             stockpile.Add(ProducedItem1);
+            ChickenChance = Random.Next(10);
+            if (ChickenChance == 1)
+            {
+                stockpile.Add(ProducedItem2);
+            }
             state.SetIndicator(new Shared.IndicatorState(CraftingCooldown, ProducedItem2), true);
 
             return;
