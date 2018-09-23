@@ -1,0 +1,13 @@
+[{
+		"isOptional": false,
+		"name": "Nach0ChickenMeat-Nach0ButcherJob",
+		"requires": [{
+			"amount": 1,
+			"type": "Nach0ChickenCorpse"
+		}],
+		"results": [{
+		"amount": 3,
+			"type": "Nach0ChickenMeat"
+		}]
+	}
+]

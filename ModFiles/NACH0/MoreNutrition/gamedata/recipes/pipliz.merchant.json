@@ -1,5 +1,5 @@
 [{
-		"isOptional": false,
+		"isOptional": true,
 		"name": "nach0.recipes.fishersremastered.pipliz.merchant.lure",
 		"requires": [{
 			"amount": 25,

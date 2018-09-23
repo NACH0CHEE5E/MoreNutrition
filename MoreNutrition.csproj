@@ -97,8 +97,16 @@
   <ItemGroup>
     <Compile Include="BlockJobsModEntries.cs" />
     <Compile Include="Jobs\Nach0BetterFisherJob.cs" />
+    <Compile Include="Jobs\Nach0ButcherJob.cs" />
     <Compile Include="Jobs\Nach0ChickenCoopJob.cs" />
     <Compile Include="Jobs\Nach0FisherJob.cs" />
+    <Compile Include="research\Nach0Baking2.cs" />
+    <Compile Include="research\Nach0Butchering.cs" />
+    <Compile Include="research\Nach0ChickenFarming.cs" />
+    <Compile Include="research\Nach0Fishing2.cs" />
+    <Compile Include="research\Nach0Lure.cs" />
+    <Compile Include="research\Nach0Fishing.cs" />
+    <Compile Include="research\Nach0Baking.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".git\objects\info\" />

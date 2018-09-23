@@ -14,7 +14,7 @@ namespace Jobs
 
         public override string NPCTypeKey { get { return "Nach0ChickenCoopJob"; } }
 
-        private static float CraftingCooldown = 15f;
+        private static float CraftingCooldown = 25f;
         private static float BlockPlacementCooldown = 1f;
         private static float MissingItemCooldown = 2f;
         private static ushort typeStraw = ItemTypes.IndexLookup.GetIndex("straw");
@@ -207,7 +207,7 @@ namespace Jobs
                             }
 
                             // change the block in the world
-                            ServerManager.TryChangeBlock(checkPos, expectedType);
+                            // ServerManager.TryChangeBlock(checkPos, expectedType);
                             state.SetIndicator(new Shared.IndicatorState(BlockPlacementCooldown, expectedType), true);
                             // state.SetCooldown(BlockPlacementCooldown);
                             return false;

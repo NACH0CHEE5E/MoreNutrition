@@ -53,6 +53,15 @@
 				"fileType" : "addOrReplaceNPCRecipes",
 				"index" : -1000000,
 				"limitsUIMapping" : [
+					"Nach0ButcherBlock"
+				],
+				"npcType" : "Nach0ButcherJob",
+				"relativePath" : "gamedata/recipes/Nach0ButcherJob.json"
+			},
+			{
+				"fileType" : "addOrReplaceNPCRecipes",
+				"index" : -1000000,
+				"limitsUIMapping" : [
 					"workbench"
 				],
 				"npcType" : "pipliz.crafter",

@@ -1,5 +1,5 @@
 [{
-		"isOptional": false,
+		"isOptional": true,
 		"name": "nach0.recipes.fishersremastered.pipliz.baker.cookedfish",
 		"requires": [{
 			"amount": 5,
@@ -12,6 +12,89 @@
 		"results": [{
 		"amount": 5,
 			"type": "nach0.types.fishersremastered.cookedfish"
+		}]
+	},
+	{
+		"isOptional": true,
+		"name": "Nach0Bread-pipliz.baker",
+		"requires": [{
+			"amount": 7,
+			"type": "flour"
+		},
+		{
+			"amount": 2,
+			"type": "firewood"
+		}],
+		"results": [{
+		"amount": 2,
+			"type": "Nach0Bread"
+		}]
+	},
+	{
+		"isOptional": true,
+		"name": "Nach0CookedChickenMeat-pipliz.baker",
+		"requires": [{
+			"amount": 2,
+			"type": "Nach0ChickenMeat"
+		},
+		{
+			"amount": 2,
+			"type": "firewood"
+		}],
+		"results": [{
+		"amount": 2,
+			"type": "Nach0CookedChickenMeat"
+		}]
+	},
+	{
+		"isOptional": true,
+		"name": "Nach0ApplePie-pipliz.baker",
+		"requires": [{
+			"amount": 5,
+			"type": "flour"
+		},
+		{
+			"amount": 3,
+			"type": "firewood"
+		},{"amount": 3,
+		"type": "Nach0Apple"}],
+		"results": [{
+		"amount": 1,
+			"type": "Nach0ApplePie"
+		}]
+	},
+	{
+		"isOptional": true,
+		"name": "Nach0ChickenPie-pipliz.baker",
+		"requires": [{
+			"amount": 5,
+			"type": "flour"
+		},
+		{
+			"amount": 3,
+			"type": "firewood"
+		},{"amount": 2,
+		"type": "Nach0CookedChickenMeat"}],
+		"results": [{
+		"amount": 1,
+			"type": "Nach0ChickenPie"
+		}]
+	},
+	{
+		"isOptional": true,
+		"name": "Nach0BerryPie-pipliz.baker",
+		"requires": [{
+			"amount": 5,
+			"type": "flour"
+		},
+		{
+			"amount": 3,
+			"type": "firewood"
+		},{"amount": 5,
+		"type": "berry"}],
+		"results": [{
+		"amount": 1,
+			"type": "Nach0BerryPie"
 		}]
 	}
 ]

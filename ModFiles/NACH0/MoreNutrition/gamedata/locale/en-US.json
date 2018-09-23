@@ -11,7 +11,7 @@
 			"baseresearch": {
 				"wheatfarming" : {
 					"description" : "A more complex method of food production, for advanced colonies only. Unlocks wheat farmers, the grindstone and the oven. Grants 400 wheat seeds.",
-					"name" : "Damper Production"
+					"name" : "Wheat Farming"
 				}
 			}
 		}

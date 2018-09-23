@@ -15,5 +15,8 @@
 	},
 	"nach0.textures.fishersremastered.composter.top": {
 		"albedo": "compostertop"
+	},
+	"Nach0ButcherBlockTopTexture": {
+		"albedo": "Nach0ButcherBlockTop"
 	}
 }
