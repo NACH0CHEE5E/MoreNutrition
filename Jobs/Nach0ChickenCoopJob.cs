@@ -128,6 +128,9 @@ namespace Jobs
             {
                 state.Inventory.Add(ByproductItem);
             }
+	          if (Pipliz.Random.NextFloat(0.0f, 1.0f) > (1.0f - ByproductChance)) {
+				        state.Inventory.Add(ByproductItem);
+			      }
             state.SetIndicator(new Shared.IndicatorState(CraftingCooldown, ProducedItem), true);
 
             return;
