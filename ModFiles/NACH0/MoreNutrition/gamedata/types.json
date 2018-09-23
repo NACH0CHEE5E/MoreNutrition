@@ -152,6 +152,17 @@
 		"maxstacksize": 100,
 		"nutritionalValue": 5.5
 	},
+	"Nach0Apple": {
+		"categories": [
+			"nach0",
+			"MoreNutrition",
+			"food"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/apple.png",
+		"maxstacksize": 100,
+		"nutritionalValue": 1.5
+	},
 	"Nach0ChickenCoopJobBlock": {
 		"categories": [
 			"nach0",
@@ -253,5 +264,32 @@
 		"parentType": "Nach0ChickenFenceCorner",
 		"boxes": [{"max": [0.5, 0.5, 0.5],"min": [-0.5, -0.5, -0.5]}],
 		"sideall": "ironblock"
+	},
+	"Nach0ChickenFeed": {
+		"categories": [
+			"nach0",
+			"MoreNutrition"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/chickenfeed.png",
+		"maxstacksize": 100
+	},
+	"Nach0Egg": {
+		"categories": [
+			"nach0",
+			"MoreNutrition"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/egg.png",
+		"maxstacksize": 100
+	},
+	"Nach0ChickenCorpse": {
+		"categories": [
+			"nach0",
+			"MoreNutrition"
+		],
+		"isPlaceable": false,
+		"icon": "./textures/icons/chicken.png",
+		"maxstacksize": 100
 	}
 }
