@@ -1,5 +1,4 @@
 [{
-		"isOptional": false,
 		"name": "nach0.recipes.fishersremastered.betterfisher.fish",
 		"requires": [{
 			"amount": 1,
@@ -7,7 +6,11 @@
 		}],
 		"results": [{
 		"amount": 5,
-			"type": "nach0.types.fishersremastered.fish"
+			"type": "nach0.types.fishersremastered.fish",
+		},
+		{
+			"amount": 1,
+			"type": "nach0.types.fishersremastered.lure",
 		}]
 	}
 ]

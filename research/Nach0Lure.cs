@@ -1,5 +1,5 @@
-﻿using Pipliz.Mods.APIProvider.Science;
-using Server.Science;
+﻿using Recipes;
+using Science;
 
 namespace MoreNutrition.Research
 {
@@ -18,9 +18,9 @@ namespace MoreNutrition.Research
             AddDependency("pipliz.baseresearch.sciencebagadvanced");
         }
 
-        public override void OnResearchComplete(ScienceManagerPlayer manager, EResearchCompletionReason reason)
+        public override void OnResearchComplete(ColonyScienceState manager, EResearchCompletionReason reason)
         {
-            RecipeStorage.GetPlayerStorage(manager.Player).SetRecipeAvailability("nach0.recipes.fishersremastered.pipliz.merchant.lure", true, "pipliz.merchant");
+            manager.Colony.RecipeData.UnlockRecipe(new RecipeKey("nach0.recipes.fishersremastered.pipliz.merchant.lure"));
         }
     }
 }

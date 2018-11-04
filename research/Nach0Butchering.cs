@@ -1,5 +1,5 @@
-﻿using Pipliz.Mods.APIProvider.Science;
-using Server.Science;
+﻿using Recipes;
+using Science;
 
 namespace MoreNutrition.Research
 {
@@ -11,14 +11,14 @@ namespace MoreNutrition.Research
             key = "Nach0Butchering";
             icon = "gamedata/mods/NACH0/MoreNutrition/gamedata/textures/icons/butcher.png";
             iterationCount = 45;
-            AddIterationRequirement("sciencebagbasic", 5);
-            AddIterationRequirement("ironsword", 5);
+            AddIterationRequirement("sciencebagbasic", 2);
+            //AddIterationRequirement("ironsword", 5);
             AddDependency("pipliz.baseresearch.sciencebagbasic");
         }
 
-        public override void OnResearchComplete(ScienceManagerPlayer manager, EResearchCompletionReason reason)
+        public override void OnResearchComplete(ColonyScienceState manager, EResearchCompletionReason reason)
         {
-            RecipeStorage.GetPlayerStorage(manager.Player).SetRecipeAvailability("Nach0ButcherBlock-pipliz.crafter", true, "pipliz.crafter");
+            manager.Colony.RecipeData.UnlockRecipe(new RecipeKey("Nach0ButcherBlock-pipliz.crafter"));
         }
     }
 }

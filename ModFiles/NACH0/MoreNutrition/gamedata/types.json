@@ -19,7 +19,7 @@
 		"isPlaceable": false,
 		"icon": "./textures/icons/cookedfish.png",
 		"maxstacksize": 150,
-		"nutritionalValue": 2.25
+		"nutritionalValue": 1.5
 	},
 	"nach0.types.fishersremastered.compost": {
 		"categories": [

@@ -1,5 +1,5 @@
-﻿using Pipliz.Mods.APIProvider.Science;
-using Server.Science;
+﻿using Recipes;
+using Science;
 
 namespace MoreNutrition.Research
 {
@@ -17,13 +17,13 @@ namespace MoreNutrition.Research
             AddDependency("pipliz.baseresearch.sciencebaglife");
         }
 
-        public override void OnResearchComplete(ScienceManagerPlayer manager, EResearchCompletionReason reason)
+        public override void OnResearchComplete(ColonyScienceState manager, EResearchCompletionReason reason)
         {
-            RecipeStorage.GetPlayerStorage(manager.Player).SetRecipeAvailability("Nach0ChickenCoopJobBlock-pipliz.crafter", true, "pipliz.crafter");
-            RecipeStorage.GetPlayerStorage(manager.Player).SetRecipeAvailability("Nach0ChickenFence-pipliz.crafter", true, "pipliz.crafter");
-            RecipeStorage.GetPlayerStorage(manager.Player).SetRecipeAvailability("Nach0ChickenFenceCorner-pipliz.crafter", true, "pipliz.crafter");
-            RecipeStorage.GetPlayerStorage(manager.Player).SetRecipeAvailability("Nach0ChickenFeed-pipliz.crafter", true, "pipliz.crafter");
-            RecipeStorage.GetPlayerStorage(manager.Player).SetRecipeAvailability("Nach0CookedChickenMeat-pipliz.baker", true, "pipliz.baker");
+            manager.Colony.RecipeData.UnlockRecipe(new RecipeKey("Nach0ChickenCoopJobBlock-pipliz.crafter"));
+            manager.Colony.RecipeData.UnlockRecipe(new RecipeKey("Nach0ChickenFence-pipliz.crafter"));
+            manager.Colony.RecipeData.UnlockRecipe(new RecipeKey("Nach0ChickenFenceCorner-pipliz.crafter"));
+            manager.Colony.RecipeData.UnlockRecipe(new RecipeKey("Nach0ChickenFeed-pipliz.crafter"));
+            manager.Colony.RecipeData.UnlockRecipe(new RecipeKey("Nach0CookedChickenMeat-pipliz.baker"));
         }
     }
 }

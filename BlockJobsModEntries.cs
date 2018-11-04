@@ -1,4 +1,5 @@
-﻿using Pipliz.Mods.APIProvider.Jobs;
+﻿using BlockTypes;
+using Pipliz.APIProvider.Jobs;
 using System.IO;
 
 namespace jobentrys
@@ -16,14 +17,15 @@ namespace jobentrys
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "nach0.morenutrition.registerjobs")]
-        [ModLoader.ModCallbackProvidesFor("pipliz.apiprovider.jobs.resolvetypes")]
         [ModLoader.ModDocumentation("Adds all the job block implementations to BlockJobManagerTracker")]
+        [ModLoader.ModCallbackDependsOn("create_servermanager_trackers")]
+        [ModLoader.ModCallbackProvidesFor("create_savemanager")]
         public static void AfterDefiningNPCTypes()
         {
-            BlockJobManagerTracker.Register<Jobs.Nach0FisherJob>("nach0.types.fishersremastered.rod");
+            /*BlockJobManagerTracker.Register<Jobs.Nach0FisherJob>("nach0.types.fishersremastered.rod");
             BlockJobManagerTracker.Register<Jobs.Nach0BetterFisherJob>("nach0.types.fishersremastered.betterrod");
             BlockJobManagerTracker.Register<Jobs.Nach0ChickenCoopJob>("Nach0ChickenCoopJobBlock");
-            BlockJobManagerTracker.Register<Jobs.Nach0ButcherJob>("Nach0ButcherBlock");
+            BlockJobManagerTracker.Register<Jobs.Nach0ButcherJob>("Nach0ButcherBlock");*/
         }
     }
 }

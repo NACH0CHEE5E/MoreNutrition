@@ -89,9 +89,9 @@
 		"isOptional": true,
 		"name": "Nach0ChickenFeed-pipliz.crafter",
 		"requires": [{
-			"amount": 15,
+			"amount": 1,
 			"type": "wheatstage1"
-		},{"amount": 2,"type": "wheat"}],
+		},{"amount": 3,"type": "wheat"}],
 		"results": [{"amount": 5,
 			"type": "Nach0ChickenFeed"
 		}]
@@ -104,7 +104,7 @@
 		"requires": [{
 			"amount": 25,
 			"type": "planks"
-		},{"amount": 4,"type": "ironsword"}],
+		}],
 		"results": [{"amount": 1,
 			"type": "Nach0ButcherBlock"
 		}]

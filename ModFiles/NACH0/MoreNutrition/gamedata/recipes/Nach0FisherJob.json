@@ -1,5 +1,4 @@
 [{
-		"isOptional": false,
 		"name": "nach0.recipes.fishersremastered.fisher.fish",
 		"requires": [{
 			"amount": 3,

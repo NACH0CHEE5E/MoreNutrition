@@ -1,12 +1,12 @@
 [{
 	"name": "NACH0.MoreNutrition",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"namepretty": "More Nutrition Beta",
 	"dllpath": "MoreNutrition.dll",
 	"enabled": true,
 	"marksgamemodded": true,
 	"compatibleversions": [
-		"0.6.3"
+		"0.7.0"
 	],
 	"jsonFiles": [
 		{
@@ -26,74 +26,49 @@
 			"relativePath": "gamedata/locale/en-US.json"
 		},
 		{
-				"fileType" : "addOrReplaceNPCRecipes",
-				"index" : -1000000,
-				"limitsUIMapping" : [
-					"nach0.types.fishersremastered.rod.x-",
-					"nach0.types.fishersremastered.rod.x+",
-					"nach0.types.fishersremastered.rod.z-",
-					"nach0.types.fishersremastered.rod.z+"
-				],
-				"npcType" : "Nach0FisherJob",
-				"relativePath" : "gamedata/recipes/Nach0FisherJob.json"
+			"fileType" : "addOrReplaceNPCRecipes",
+			"index" : -1000000,
+			"limitsUIMapping" : [
+				"workbench"
+			],
+			"npcType" : "pipliz.crafter",
+			"relativePath" : "gamedata/recipes/pipliz.crafter.json"
 		},
 		{
-				"fileType" : "addOrReplaceNPCRecipes",
-				"index" : -1000000,
-				"limitsUIMapping" : [
-					"nach0.types.fishersremastered.betterrod.x-",
-					"nach0.types.fishersremastered.betterrod.x+",
-					"nach0.types.fishersremastered.betterrod.z-",
-					"nach0.types.fishersremastered.betterrod.z+"
-				],
-				"npcType" : "Nach0BetterFisherJob",
-				"relativePath" : "gamedata/recipes/Nach0BetterFisherJob.json"
-			},
-			{
-				"fileType" : "addOrReplaceNPCRecipes",
-				"index" : -1000000,
-				"limitsUIMapping" : [
-					"Nach0ButcherBlock"
-				],
-				"npcType" : "Nach0ButcherJob",
-				"relativePath" : "gamedata/recipes/Nach0ButcherJob.json"
-			},
-			{
-				"fileType" : "addOrReplaceNPCRecipes",
-				"index" : -1000000,
-				"limitsUIMapping" : [
-					"workbench"
-				],
-				"npcType" : "pipliz.crafter",
-				"relativePath" : "gamedata/recipes/pipliz.crafter.json"
-			},
-			{
-				"fileType" : "addOrReplaceNPCRecipes",
-				"index" : -1000000,
-				"limitsUIMapping" : [
-					"shop"
-				],
-				"npcType" : "pipliz.merchant",
-				"relativePath" : "gamedata/recipes/pipliz.merchant.json"
-			},
-			{
-				"fileType" : "addOrReplaceNPCRecipes",
-				"index" : -1000000,
-				"limitsUIMapping" : [
-					"ovenx+",
-					"ovenx-",
-					"ovenz+",
-					"ovenz-",
-					"ovenlitx+",
-					"ovenlitx-",
-					"ovenlitz+",
-					"ovenlitz-"
-				],
-				"npcType" : "pipliz.baker",
-				"relativePath" : "gamedata/recipes/pipliz.baker.json"
-			}
-		],
+			"fileType" : "addOrReplaceNPCRecipes",
+			"index" : -1000000,
+			"limitsUIMapping" : [
+				"shop"
+			],
+			"npcType" : "pipliz.merchant",
+			"relativePath" : "gamedata/recipes/pipliz.merchant.json"
+		},
+		{
+			"fileType" : "addOrReplaceNPCRecipes",
+			"index" : -1000000,
+			"limitsUIMapping" : [
+				"ovenx+",
+				"ovenx-",
+				"ovenz+",
+				"ovenz-",
+				"ovenlitx+",
+				"ovenlitx-",
+				"ovenlitz+",
+				"ovenlitz-"
+			],
+			"npcType" : "pipliz.baker",
+			"relativePath" : "gamedata/recipes/pipliz.baker.json"
+		}
+	],
 	"patchnotes": [
+	{
+		"version": "1.2.0",
+		"notes": [
+			"*0.7.0 support",
+			"*If you find any issues or have suggestions join the discord",
+			"*discord.gg/tqFhxhm"
+		]
+	},
 	{
 				"version": "1.0.0",
 				"notes": [
